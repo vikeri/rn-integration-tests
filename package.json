@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "xcodebuild test -project ios/RNIntegrationTestExample.xcodeproj -scheme RNIntegrationTestExample -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest' | xcpretty --test --color"
   },
   "dependencies": {
     "react": "^0.14.8",
