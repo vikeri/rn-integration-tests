@@ -18,5 +18,4 @@ npm install
 ```
 npm test
 ```
-If you want to customize how the tests are run, edit the `npm test`-script in
-`package.json`
+If you want to customize how the tests are run, edit the `./scripts/test`

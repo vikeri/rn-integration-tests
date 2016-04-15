@@ -1,0 +1,5 @@
+#! /bin/bash
+npm start &
+sleep 2 # Yuck, exists until I figure out how to repress xcode from starting a server if the packager is not already running
+xcodebuild test -project ios/RNIntegrationTestExample.xcodeproj -scheme RNIntegrationTestExample -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest' | xcpretty --test --color && 
+kill %1 # Kill the server when the tests have completed
