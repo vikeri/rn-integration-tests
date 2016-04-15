@@ -6,7 +6,9 @@ Only iOS at the moment.
 
 ## Install
 
-Requirements: XCode
+Requirements: 
+- XCode
+- xctool (`brew install xctool`)
 
 ```
 git clone https://github.com/vikeri/rnintegrationtestexample

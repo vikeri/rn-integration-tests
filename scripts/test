@@ -1,5 +1,20 @@
 #! /bin/bash
-npm start &
-sleep 2 # Yuck, exists until I figure out how to repress xcode from starting a server if the packager is not already running
-xcodebuild test -project ios/RNIntegrationTestExample.xcodeproj -scheme RNIntegrationTestExample -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest' | xcpretty --test --color && 
-kill %1 # Kill the server when the tests have completed
+
+SCRIPTS=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+ROOT=$(dirname $SCRIPTS)
+
+export REACT_PACKAGER_LOG="$ROOT/server.log"
+
+cd $ROOT
+
+function cleanup {
+    kill 0
+}
+trap cleanup EXIT
+
+./node_modules/react-native/packager/packager.sh --nonPersistent &
+
+xctool \
+  -project ios/RNIntegrationTestExample.xcodeproj \
+  -scheme RNIntegrationTestExample -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 5,OS=9.3' \
+  test
