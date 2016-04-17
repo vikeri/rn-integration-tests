@@ -10,16 +10,10 @@ var {
   View,
 } = React;
 
-// Keep this list in sync with UIExplorerIntegrationTests.m
+// Keep this list in sync with IntegrationTests.m
 var TESTS = [
   require('./IntegrationTestHarnessTest'),
-  // require('./TimersTest'),
-  // require('./AsyncStorageTest'),
-  // require('./LayoutEventsTest'),
-  // require('./AppEventsTest'),
-  // require('./SimpleSnapshotTest'),
-  // require('./ImageSnapshotTest'),
-  // require('./PromiseTest'),
+  require('./PassingTest.js'),
 ];
 
 TESTS.forEach(
