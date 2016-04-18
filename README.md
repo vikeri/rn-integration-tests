@@ -1,10 +1,10 @@
 # React Native Integration Testing
-This is intended to be a minimal example of how to do integration testing in
-React Native.
+A minimal example of how to do integration testing in React Native.
 
 Only iOS at the moment.
 
-There are two kinds of integration tests.
+There are two kinds of integration tests
+
 1. Tests that are defined in Objective-C: [IntegrationTestsObjC](ios/RNIntegrationTestExampleTests/IntegrationTestsObjC.m)
 2. Tests that are defined in JS: [IntegrationTestsJS](ios/RNIntegrationTestExampleTests/IntegrationTestsJS.m)
 
