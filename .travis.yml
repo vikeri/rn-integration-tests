@@ -1,6 +1,6 @@
 language: objective-c
 
-osx_image: xcode7.3
+osx_image: xcode7.2
 
 install:
   - brew update
@@ -9,7 +9,7 @@ install:
   - export NVM_DIR="/Users/travis/build/facebook/.nvm"
   - source $(brew --prefix nvm)/nvm.sh
   # testing with npm@2 for diversity, Circle tests with npm@3
-  - nvm install 4.4.0
+  - nvm install 5.7.0
   - npm config set spin=false
   - npm config set progress=false
   - npm install
