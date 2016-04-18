@@ -10,10 +10,11 @@ var {
   View,
 } = React;
 
-// Keep this list in sync with IntegrationTests.m
+// Keep this list in sync with IntegrationTestsJS.m
 var TESTS = [
   require('./IntegrationTestHarnessTest'),
   require('./PassingTest.js'),
+  require('./FailingTest.js'),
 ];
 
 TESTS.forEach(
@@ -41,6 +42,9 @@ var IntegrationTestsApp = React.createClass({
     }
     return (
       <View style={styles.container}>
+        <Text>
+          Text for test.
+        </Text>
         <Text style={styles.row}>
           Click on a test to run it in this shell for easier debugging and
           development.  Run all tests in the testing environment with cmd+U in
@@ -81,5 +85,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#bbbbbb',
   },
 });
+
+module.exports = IntegrationTestsApp;
 
 AppRegistry.registerComponent('IntegrationTestsApp', () => IntegrationTestsApp);

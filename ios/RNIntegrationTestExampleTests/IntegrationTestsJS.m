@@ -12,11 +12,11 @@
 [_runner runTest:_cmd module:@#name]; \
 }
 
-@interface UIExplorerIntegrationTests : XCTestCase
+@interface IntegrationTestsJS : XCTestCase
 
 @end
 
-@implementation UIExplorerIntegrationTests
+@implementation IntegrationTestsJS
 {
   RCTTestRunner *_runner;
 }
@@ -54,8 +54,9 @@ configurationBlock:nil
 #pragma mark - JS tests
 
 // This list should be kept in sync with IntegrationTestsApp.js
-RCT_TEST(IntegrationTestHarnessTest)
-RCT_TEST(PassingTest)
+RCT_TEST(IntegrationTestHarnessTest);
+RCT_TEST(PassingTest);
+// RCT_TEST(FailingTest)
 
 
 @end
